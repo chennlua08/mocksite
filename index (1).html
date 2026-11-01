@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mara and Jun | Wedding RSVP (mock)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+:root{--ink:#3b2a3f;--blush:#f8e8ea;--rose:#e6a9b4;--gold:#b8923f;--paper:#fffafa}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;line-height:1.6;background:linear-gradient(var(--blush),var(--paper) 70%)}
+.hero{position:relative;overflow:hidden;min-height:64vh;display:grid;place-content:center;text-align:center;padding:2rem 1rem}
+.hero p{margin:0;letter-spacing:.04em}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(2.8rem,10vw,5.2rem);line-height:1.05;margin:.4rem 0}
+.date{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem;color:var(--gold)}
+.butterfly{position:absolute;top:16%;left:-12%;width:60px;animation:fly 18s ease-in-out infinite}
+.wings{transform-origin:40px 30px;animation:flap .55s ease-in-out infinite alternate}
+@keyframes flap{to{transform:scaleX(.3)}}
+@keyframes fly{
+ 0%{transform:translate(0,0) rotate(8deg)}
+ 25%{transform:translate(32vw,-26px) rotate(-8deg)}
+ 50%{transform:translate(58vw,22px) rotate(10deg)}
+ 75%{transform:translate(84vw,-18px) rotate(-6deg)}
+ 100%{transform:translate(118vw,8px) rotate(8deg)}}
+main{padding:0 1rem 3rem}
+.card{max-width:440px;margin:0 auto;background:#fff;border-radius:20px;padding:1.6rem 1.4rem;box-shadow:0 10px 30px rgba(59,42,63,.08)}
+.card h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:2rem;margin:0 0 .2rem}
+.card .lead{margin:0 0 1.2rem;font-size:.95rem}
+label,legend{display:block;font-weight:600;font-size:.9rem;margin:.9rem 0 .3rem;padding:0}
+fieldset{border:0;margin:0;padding:0}
+input[type=text],input[type=number],textarea{width:100%;font:inherit;color:inherit;padding:.65rem .8rem;border:1.5px solid #e9d9dc;border-radius:12px;background:#fffdfd}
+input:focus-visible,textarea:focus-visible,.choice input:focus-visible+span,button:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.choices{display:grid;gap:.5rem}
+.choice input{position:absolute;opacity:0}
+.choice span{display:block;padding:.65rem .8rem;border:1.5px solid #e9d9dc;border-radius:12px;cursor:pointer}
+.choice input:checked+span{border-color:var(--gold);background:#fbf3e3}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.btn-wrap{position:relative;margin-top:1.4rem}
+.mini{position:absolute;top:-36px;right:26px;width:40px;pointer-events:none;overflow:visible}
+.wg{transform-box:view-box;transform-origin:30px 46px;animation:flap 6s ease-in-out infinite}
+.fn{--o:30deg}.hn{--o:-24deg}.ff{--o:-22deg;animation-delay:.15s}.hf{--o:18deg;animation-delay:.15s}
+@keyframes flap{0%,80%,100%{transform:rotate(0deg)}20%,36%,60%{transform:rotate(var(--o))}28%{transform:rotate(calc(var(--o)*.5))}}
+.magic{--a:0deg;width:100%;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;padding:.85rem 1rem;border:2.5px solid transparent;border-radius:999px;
+ background:linear-gradient(#fff,#fff) padding-box,conic-gradient(from var(--a),var(--gold),var(--rose),rgba(230,169,180,0) 38%,var(--gold)) border-box;
+ animation:spin 4s linear infinite}
+.magic:disabled{opacity:.6;cursor:wait}
+@keyframes spin{to{--a:360deg}}
+.sparkle{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;background:var(--gold);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);pointer-events:none;animation:pop .7s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
+#status{min-height:1.5em;margin:1rem 0 0;font-size:1rem;font-weight:600;color:#8a2f45}
+.alt{margin:.6rem 0 0;font-size:.85rem}
+.alt a{color:var(--ink)}
+.ask{text-align:center;margin:1.4rem 0 .5rem;font-size:.95rem}
+.fbbtn{display:block;max-width:440px;margin:0 auto;text-align:center;padding:.7rem 1rem;border:1.5px solid var(--gold);border-radius:999px;color:var(--ink);background:#fff;text-decoration:none;font-weight:600}
+@media (max-width:480px){.hero{min-height:54vh}.butterfly{width:46px}.card{padding:1.3rem 1.1rem}main{padding:0 .8rem 2.5rem}}
+@media (prefers-reduced-motion:reduce){.butterfly,.wg,.wings,.magic{animation:none}.butterfly{left:70%}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="butterfly" viewBox="0 0 80 60" aria-hidden="true">
+    <g class="wings" fill="#e6a9b4" stroke="#b8923f" stroke-width="1.2">
+      <path d="M40 30C28 8 6 8 8 26 9 38 28 40 40 30Z"/>
+      <path d="M40 32C30 36 14 40 20 52 26 58 38 46 40 32Z"/>
+      <g transform="translate(80 0) scale(-1 1)">
+        <path d="M40 30C28 8 6 8 8 26 9 38 28 40 40 30Z"/>
+        <path d="M40 32C30 36 14 40 20 52 26 58 38 46 40 32Z"/>
+      </g>
+    </g>
+    <ellipse cx="40" cy="32" rx="2.2" ry="12" fill="#3b2a3f"/>
+  </svg>
+  <p>We are getting married</p>
+  <h1 id="names">Mara and Jun</h1>
+  <p class="date" id="when">Saturday, 14 March 2027</p>
+  <p id="where">Garden Hall, Tagaytay</p>
+</header>
+
+<main>
+  <form class="card" id="rsvp" novalidate>
+    <h2>RSVP</h2>
+    <p class="lead">Please reply so we can save you a seat.</p>
+
+    <label for="name">Your full name</label>
+    <input type="text" id="name" autocomplete="name" required>
+
+    <label for="email">Your email (we will send you a copy of your RSVP)</label>
+    <input type="text" id="email" inputmode="email" autocomplete="email">
+
+    <fieldset>
+      <legend>Will you come?</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="attending" value="yes"><span id="yesText"></span></label>
+        <label class="choice"><input type="radio" name="attending" value="no"><span id="noText"></span></label>
+      </div>
+    </fieldset>
+
+    <label for="guests">Attending with? (names, optional)</label>
+    <input type="text" id="guests" autocomplete="off">
+
+    <label for="message">Message for the couple (optional)</label>
+    <textarea id="message" rows="3"></textarea>
+
+    <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+
+    <div class="btn-wrap" id="btnWrap">
+      <svg class="mini" viewBox="0 0 60 60" aria-hidden="true">
+        <g fill="#d98fa0" stroke="#b8923f" stroke-width="1.2" stroke-linejoin="round">
+          <path class="wg hf" d="M30 46C20 46 11 41 13 32 22 30 30 36 32 46Z"/>
+          <path class="wg ff" d="M30 46C23 36 21 20 29 8 40 14 45 30 35 46Z"/>
+        </g>
+        <ellipse cx="34" cy="47" rx="8" ry="2.8" fill="#3b2a3f"/>
+        <circle cx="43" cy="45.5" r="2.4" fill="#3b2a3f"/>
+        <path d="M44 43.5C46 38 49 36 52 35M43 43.5C44 38 46 34 49 32M30 49 28 53M35 49.5 35 53.5M40 48.5 42 53" fill="none" stroke="#3b2a3f" stroke-width="1" stroke-linecap="round"/>
+        <g fill="#e6a9b4" stroke="#b8923f" stroke-width="1.2" stroke-linejoin="round">
+          <path class="wg hn" d="M30 46C20 46 11 41 13 32 22 30 30 36 32 46Z"/>
+          <path class="wg fn" d="M30 46C23 36 21 20 29 8 40 14 45 30 35 46Z"/>
+          <path class="wg fn" d="M31 44C29 34 30 24 32 17" fill="none" stroke-width=".9"/>
+        </g>
+      </svg>
+      <button class="magic" id="send" type="submit">Send RSVP</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <p class="alt">Did it not work? <a id="fallback" href="#" target="_blank" rel="noopener">RSVP with the form here</a></p>
+  </form>
+  <p class="ask">Got questions?</p>
+  <a class="fbbtn" id="ask" href="#" target="_blank" rel="noopener">Message us on Facebook</a>
+</main>
+
+<script>
+/* ===== EDIT THIS PART ===== */
+const CONFIG = {
+  // "email" opens the guest's email app with the RSVP ready to send; "googleform" sends to your Google Form
+  mode: "googleform",
+  emailTo: "",
+  // Google Form: use the "formResponse" link, not "viewform"
+  formAction: "https://docs.google.com/forms/d/e/1FAIpQLSe5XniyroZ_at0sm8Wj1anAHyX9RJtP78s4VfbCAyi1SbGFbw/formResponse",
+  fallbackLink: "https://docs.google.com/forms/d/e/1FAIpQLSe5XniyroZ_at0sm8Wj1anAHyX9RJtP78s4VfbCAyi1SbGFbw/viewform",
+  // entry IDs from "Get pre-filled link" in Google Forms
+  fields: { name: "entry.1684029567", email: "emailAddress", attending: "entry.877086558", guests: "entry.1498135098", message: "entry.2606285" },
+  // must match the choices in your Google Form exactly
+  yesText: "Yes, I will be there",
+  noText: "Sorry, I cannot come",
+  // Facebook page or Messenger link of the couple
+  contactLink: "https://www.facebook.com/profile.php?id=61595128689609"
+};
+/* ========================== */
+
+const $ = id => document.getElementById(id);
+$("yesText").textContent = CONFIG.yesText;
+$("noText").textContent = CONFIG.noText;
+$("fallback").href = CONFIG.fallbackLink;
+$("ask").href = CONFIG.contactLink;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function burst(){
+  if(reduce) return;
+  for(let i=0;i<10;i++){
+    const s=document.createElement("span"), ang=(i/10)*Math.PI*2, d=40+Math.random()*30;
+    s.className="sparkle";
+    s.style.setProperty("--dx",Math.cos(ang)*d*1.8+"px");
+    s.style.setProperty("--dy",Math.sin(ang)*d*.7+"px");
+    $("btnWrap").appendChild(s);
+    setTimeout(()=>s.remove(),750);
+  }
+}
+
+$("rsvp").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const status=$("status"), btn=$("send");
+  const name=$("name").value.trim();
+  const pick=document.querySelector("input[name=attending]:checked");
+  if(!name){status.textContent="Please enter your name.";$("name").focus();return;}
+  if(!/^\S+@\S+\.\S+$/.test($("email").value.trim())){status.textContent="Please enter your email so we can send you a copy.";$("email").focus();return;}
+  if(!pick){status.textContent="Please choose if you can come.";return;}
+  burst();
+  if($("website").value){status.textContent="RSVP sent.";return;} // spam trap: silently ignore
+  if(CONFIG.mode==="email"){
+    const answer=pick.value==="yes"?CONFIG.yesText:CONFIG.noText;
+    const body="Name: "+name+"\nAnswer: "+answer+"\nGuests: "+$("guests").value+"\nMessage: "+$("message").value.trim();
+    const subject="RSVP: "+name+" ("+(pick.value==="yes"?"Yes":"No")+")";
+    status.textContent="Your email app should open. Please press Send there to finish your RSVP.";
+    location.href="mailto:"+CONFIG.emailTo+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+    return;
+  }
+  if(CONFIG.formAction.includes("PASTE_")||CONFIG.fields.name==="entry.1111111111"){
+    status.textContent="Demo mode: the Google Form is not connected yet, so nothing was sent.";
+    return;
+  }
+  const data=new URLSearchParams();
+  data.append(CONFIG.fields.name,name);
+  const mail=$("email").value.trim();
+  if(mail) data.append(CONFIG.fields.email,mail);
+  data.append(CONFIG.fields.attending,pick.value==="yes"?CONFIG.yesText:CONFIG.noText);
+  data.append(CONFIG.fields.guests,$("guests").value);
+  data.append(CONFIG.fields.message,$("message").value.trim());
+  btn.disabled=true; status.textContent="Sending...";
+  try{
+    await fetch(CONFIG.formAction,{method:"POST",mode:"no-cors",body:data});
+    // no-cors: we cannot read the reply, so this only means it was sent
+    status.textContent="RSVP sent. A copy should arrive in your email soon (check your Spam folder). If you do not hear from us in a few days, please message us.";
+    $("rsvp").reset();
+  }catch(err){
+    status.textContent="Could not send. Check your connection or use the form link below.";
+  }
+  btn.disabled=false;
+});
+</script>
+</body>
+</html>
